@@ -12,13 +12,11 @@ class TenantController extends Controller
     public function index(){
         $users = collect();
         Tenant::all()->runForEach(function () use ($users) {
-            dd(Tenant('id'));
             foreach(User::all() as $user){
                 $users->push($user);
             }
         });
         $tenants = Tenant::all();
-        dd($tenants);
         return view('tenant.index',compact('tenants','users'));
     }
     public function create(){

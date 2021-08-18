@@ -22,3 +22,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('tenant', TenantController::class);
+
+
+
+
+require __DIR__ . '/stores.php';
